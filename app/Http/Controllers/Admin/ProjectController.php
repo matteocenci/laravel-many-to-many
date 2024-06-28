@@ -15,6 +15,8 @@ class ProjectController extends Controller
     public function index()
     {
         $projects = Project::all();
+
+        return view('admin.project.index', compact('projects'));
     }
 
     /**
@@ -24,6 +26,7 @@ class ProjectController extends Controller
     public function create()
     {
         //
+        return view('admin.project.create');
     }
 
     /**
@@ -39,18 +42,20 @@ class ProjectController extends Controller
      * Display the specified resource.
      * Visualizza il singolo record in base all'id passato (READ)
      */
-    public function show(string $id)
+    public function show(Project $project)
     {
-        //
+        
+        return view('admin.project.show', compact('project'));
     }
 
     /**
      * Show the form for editing the specified resource.
      * Mostra il form di modifica
      */
-    public function edit(string $id)
+    public function edit(Project $project)
     {
         //
+        return view('admin.project.edit', compact('project'));
     }
 
     /**
